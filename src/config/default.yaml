@@ -1,0 +1,9 @@
+services:
+  user: http://localhost:5001
+
+db:
+  uri: mongodb://root:rootpw@mongo:27017/identities?authSource=admin
+
+keys:
+  jwt:
+    public: |

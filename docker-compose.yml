@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:4.1
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpw
+  web:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      PORT: 5001
+    command: npm run dev
+    volumes:
+      - ./src:/code
